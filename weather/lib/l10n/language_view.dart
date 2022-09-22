@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:weather/ressources/constants.dart';
+import 'package:weather/weather/view/weather_view.dart';
 
 class LanguageScreen extends StatelessWidget {
   const LanguageScreen({Key? key}) : super(key: key);
@@ -16,11 +14,11 @@ class LanguageScreen extends StatelessWidget {
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/splash.png", ),
-              fit: BoxFit.cover
-            )
-          ),
+              image: DecorationImage(
+                  image: AssetImage(
+                    "assets/splash.png",
+                  ),
+                  fit: BoxFit.cover)),
         ),
         Center(
           child: Column(
@@ -28,15 +26,30 @@ class LanguageScreen extends StatelessWidget {
             children: [
               Container(
                 width: width - 100,
-                child:
-                    ElevatedButton(onPressed: () {
-                      EasyLoading.show();
-                    }, child: Text(Constants.german)),
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacement<void, void>(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                               WeatherView(),
+                        ),
+                      );
+                    },
+                    child: Text(Constants.german)),
               ),
               Container(
                 width: width - 100,
-                child:
-                    ElevatedButton(onPressed: () {}, child: Text(Constants.english)),
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacement<void, void>(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                               WeatherView(),
+                        ),
+                      );
+                    }, child: Text(Constants.english)),
               ),
             ],
           ),
