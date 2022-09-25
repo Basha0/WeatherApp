@@ -47,6 +47,7 @@ class LanguageScreen extends ConsumerWidget {
   // set language that was choosen and save it to the app preferences
   setLanguage(WidgetRef ref, String language) async {
     await sharedPreferences.setBool(PreferenceKeys.languageIsSet, true);
+    await sharedPreferences.setString(PreferenceKeys.languageLocale, language);
     ref.read(languageProvider.notifier).setLocale(Locale(language));
   }
 }
