@@ -43,12 +43,12 @@ class WeatherView extends StatelessWidget {
                         await LocationService.determinePermission();
                         break;
                       case LocationServiceErrorHelper.serviceNotEnabled:
-                        WeatherDialog.showOkDialog(context, "Error",
-                            "To use this function you need to enable your locataion.");
+                        WeatherDialog.showOkDialog(context, AppLocalizations.of(context).error,
+                            AppLocalizations.of(context).enableLocationServiceDesc);
                         break;
                       default:
-                        WeatherDialog.showOkDialog(context, "Error",
-                            "To use this function you need to allow the Application to access your locataion.");
+                        WeatherDialog.showOkDialog(context, AppLocalizations.of(context).error,
+                            AppLocalizations.of(context).grantLocationPermissionDesc);
                     }
                   },
                   child: Container(

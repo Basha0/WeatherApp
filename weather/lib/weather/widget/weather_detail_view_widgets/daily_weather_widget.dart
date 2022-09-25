@@ -18,7 +18,7 @@ class DailyWeatherWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             child: Text(
-              "Daily Weather",
+              AppLocalizations.of(context).dailyForecast,
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
@@ -34,6 +34,7 @@ class DailyWeatherWidget extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Convert TimeStamp to date
                       Text(
                         ConvertionHelper.parseTimeStamp(
                             dailyModel[index].currentTimeTimeStamp,

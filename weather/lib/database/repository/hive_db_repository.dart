@@ -3,14 +3,11 @@ import 'package:weather/weather/model/weather_model.dart';
 
 abstract class HiveDatabaseLogic {
   //Fetch
-  Future<WeatherModel?> getWeather();
+  Future<WeatherModel?> getWeather(String cityName);
   Future<List<City>> getAllCities();
 
   //Create
   Future addWeather(WeatherModel weatherModel);
   Future addCity(City city);
   Future saveCities(List<City> cities);
-
-  //Update
-  Future updateWeather(WeatherModel weatherModel);
 }

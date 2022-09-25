@@ -1,6 +1,7 @@
 {
     "title": "weather App",
     "ok": "Ok",
+    "loadingWeather" : "Loading Weather...",
     "loadingCities" : "Loading Cities...",
     "cancel": "cancel",
     "addCity": "Add City",
@@ -11,6 +12,11 @@
     "cityNameExistsTitle":"City allready exists",
     "cityNameExistsDesc":"Your City is allready in your list. Please add another City.",
     "cityLoadingStatus" : "City is being added...",
+    "dailyForecast" : "Weather forecast",
     "day" : "Day",
-    "night" : "Night"
+    "night" : "Night",
+    "error" : "Error",
+    "enableLocationServiceDesc" : "To use this function you need to enable your locataion.",
+    "grantLocationPermissionDesc" : "To use this function you need to allow the Application to access your locataion."
+
 }

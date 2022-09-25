@@ -1,8 +1,16 @@
 import 'package:weather/weather/model/weather_state_model.dart';
 
+import 'package:hive/hive.dart';
+
+part 'weather_daily_model.g.dart';
+
+@HiveType(typeId: 2)
 class DailyModel {
+   @HiveField(0)
   late int currentTimeTimeStamp;
+   @HiveField(1)
   late Map<String, dynamic> temp;
+   @HiveField(2)
   late List<Weather> weather;
 
   DailyModel(this.currentTimeTimeStamp, this.temp, this.weather);
