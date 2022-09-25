@@ -1,4 +1,3 @@
-import 'package:intl/intl.dart';
 import 'package:weather/weather/model/weather_state_model.dart';
 
 class CurrentModel {

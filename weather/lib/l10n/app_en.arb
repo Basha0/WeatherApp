@@ -8,6 +8,8 @@
     "cityName":"City Name",
     "cityNameEmptyTitle":"City Name is Empty!",
     "cityNameEmptyDesc":"Please add a City Name to continue.",
+    "cityNameExistsTitle":"City allready exists",
+    "cityNameExistsDesc":"Your City is allready in your list. Please add another City.",
     "cityLoadingStatus" : "City is being added...",
     "day" : "Day",
     "night" : "Night"

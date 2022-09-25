@@ -8,6 +8,8 @@ import '../model/weather_model.dart';
 final httpWeatherClient =
     Provider<HttpWeatherClient>((ref) => HttpWeatherClient());
 
+
+// Autodispose disposes the state after navigationg back in the
 final weatherResponseProvider =
     FutureProvider.autoDispose.family<WeatherModel, City>((ref, city) async {
   final httpClient = ref.read(httpWeatherClient);

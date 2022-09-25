@@ -8,6 +8,8 @@
     "cityName": "Stadt Name",
     "cityNameEmptyTitle":"Stadt Name ist leer",
     "cityNameEmptyDesc":"Bitte fügen Sie einen Namen für Ihre Stadt ein.",
+    "cityNameExistsTitle":"Stadt existiert bereits",
+    "cityNameExistsDesc":"Die eingegebene Stadt ist bereits in ihrer Liste. Bitte wählen Sie eine andere Stadt",
     "cityLoadingStatus" : "Stadt wird hinzugefügt...",
     "day" : "Tag",
     "night" : "Nacht"
