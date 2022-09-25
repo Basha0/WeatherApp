@@ -22,8 +22,8 @@ class WeatherModelAdapter extends TypeAdapter<WeatherModel> {
       lon: fields[2] as double?,
       timezone: fields[3] as String?,
       timezoneOffset: fields[4] as int?,
-      current: (fields[5] as Map?)?.cast<String, dynamic>(),
-      daily: (fields[6] as List?)?.cast<dynamic>(),
+      current: fields[5] as CurrentModel?,
+      daily: (fields[6] as List?)?.cast<DailyModel>(),
     );
   }
 

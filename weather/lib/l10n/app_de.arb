@@ -1,3 +1,15 @@
 {
-    "title": "Wetter App"
+    "title": "Wetter App",
+    "ok": "Ok",
+    "loadingCities" : "Städte werden geladen...",
+    "cancel": "Abbrechen",
+    "addCity": "Stadt Hinzufügen",
+    "addCityTitle":"Füge eine neue Stadt Hinzu!",
+    "cityName": "Stadt Name",
+    "cityNameEmptyTitle":"Stadt Name ist leer",
+    "cityNameEmptyDesc":"Bitte fügen Sie einen Namen für Ihre Stadt ein.",
+    "cityLoadingStatus" : "Stadt wird hinzugefügt...",
+    "day" : "Tag",
+    "night" : "Nacht"
+
 }
