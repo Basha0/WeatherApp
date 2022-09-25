@@ -47,13 +47,14 @@ void main() async {
             builder: EasyLoading.init(),
             supportedLocales: L10n.all,
             theme: AppThemes.buildDarkTheme(),
-            home: languageIsSet ? WeatherView() : LanguageScreen(),
+            home: languageIsSet ? WeatherView() : LanguageScreen(false),
           );
         },
       ),
     ),
   );
 }
+
 // initialize EasyLoading and customize it
 initializeEasyLoading() {
   EasyLoading.instance
@@ -69,7 +70,7 @@ initializeEasyLoading() {
     ..dismissOnTap = false;
 }
 
-// preloading and caching SVGs 
+// preloading and caching SVGs
 preloadSVGs() {
   Future.wait([
     precachePicture(
@@ -83,6 +84,7 @@ preloadSVGs() {
 initHiveDataBase() async {
   await HiveService.init();
 }
+
 // initialize Sharedpreferences singleton to acces from whole app
 initializeSingletons() async {
   sharedPreferences = await SharedPreferences.getInstance();
