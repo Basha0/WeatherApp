@@ -1,4 +1,6 @@
 import 'package:hive/hive.dart';
+import 'package:weather/weather/model/weather_current_model.dart';
+import 'package:weather/weather/model/weather_daily_model.dart';
 
 part 'weather_model.g.dart';
 
@@ -15,9 +17,9 @@ class WeatherModel {
   @HiveField(4)
   int? timezoneOffset;
   @HiveField(5)
-  Map<String, dynamic>? current;
+  CurrentModel? current;
   @HiveField(6)
-  List<dynamic>? daily;
+  List<DailyModel>? daily;
 
   WeatherModel(
       {this.cityName,
@@ -34,19 +36,18 @@ class WeatherModel {
     lon = json['lon'];
     timezone = json['timezone'];
     timezoneOffset = json['timezone_offset'];
-    if (json['current'] != null) {
-      current = <String, dynamic>{};
-
-      json['current'].forEach((k, v) {
-        final map = <String, dynamic>{k as String: v};
-        current!.addAll(map);
-      });
-    }
-    if (json['daily'] != null) {
-      daily = <dynamic>[];
-      json['daily'].forEach((v) {
-        daily!.add(v);
+    current = CurrentModel.fromJson(json["current"]);
+    if (json["daily"] is List) {
+      List<dynamic> list = json["daily"];
+      daily = [];
+      list.forEach((map) {
+        daily!.add(DailyModel.fromJson(map));
       });
     }
   }
 }
+
+
+
+
+

@@ -1,3 +1,14 @@
 {
-    "title": "weather App"
+    "title": "weather App",
+    "ok": "Ok",
+    "loadingCities" : "Loading Cities...",
+    "cancel": "cancel",
+    "addCity": "Add City",
+    "addCityTitle":"Add a new City",
+    "cityName":"City Name",
+    "cityNameEmptyTitle":"City Name is Empty!",
+    "cityNameEmptyDesc":"Please add a City Name to continue.",
+    "cityLoadingStatus" : "City is being added...",
+    "day" : "Day",
+    "night" : "Night"
 }
