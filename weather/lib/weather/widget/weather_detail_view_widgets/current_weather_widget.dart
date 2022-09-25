@@ -20,6 +20,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 children: [
                   Row(
                     children: [
+                      // Convert TimeStamp to date
                       Text(
                         ConvertionHelper.parseTimeStamp(
                             currentWeather.currentTimeTimeStamp, Constants.dayHourFormat ) + cityName,
@@ -37,9 +38,6 @@ class CurrentWeatherWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ],
-              ),
-              Column(
-                children: [],
               ),
             ],
           ),

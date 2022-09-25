@@ -98,6 +98,7 @@ class AddCityWidget extends StatelessWidget {
     );
   }
 
+  // trim Latitude and longitude to 2 numbers after decimal as the a API wouldn't handle more than 2
   double getNumber(double input, {int precision = 2}) {
     return double.parse(
         '$input'.substring(0, '$input'.indexOf('.') + precision + 1));

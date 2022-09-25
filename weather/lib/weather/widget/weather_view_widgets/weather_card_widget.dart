@@ -24,7 +24,9 @@ class WeatherCardWidget extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.sunny),
-                SizedBox(width: 16,),
+                SizedBox(
+                  width: 16,
+                ),
                 Text(city.name),
               ],
             ),

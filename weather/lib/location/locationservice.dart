@@ -6,29 +6,27 @@ class LocationService {
     LocationPermission permission;
     LocationServiceErrorHelper status = LocationServiceErrorHelper.allowed;
 
+    // Check if locationservice is enabled
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       status = LocationServiceErrorHelper.serviceNotEnabled;
-      return status;
     }
-
+    // Check if permissions are granted and if not request them
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         status = LocationServiceErrorHelper.denied;
-        return status;
       }
     }
-
+    // Check if permissions were denied for ever
     if (permission == LocationPermission.deniedForever) {
       status = LocationServiceErrorHelper.deniedForever;
-      return status;
     }
-    status = LocationServiceErrorHelper.allowed;
     return status;
   }
 
+  // get loction of User
   static Future<Position> getlocation() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.best);
@@ -36,6 +34,7 @@ class LocationService {
   }
 }
 
+// Helper to define the permission status and use it to handle which Dialog should be displayed
 enum LocationServiceErrorHelper {
   serviceNotEnabled,
   denied,

@@ -1,6 +1,7 @@
 {
     "title": "Wetter App",
     "ok": "Ok",
+    "loadingWeather" : "Wetter wird geladen...",
     "loadingCities" : "Städte werden geladen...",
     "cancel": "Abbrechen",
     "addCity": "Stadt Hinzufügen",
@@ -11,7 +12,11 @@
     "cityNameExistsTitle":"Stadt existiert bereits",
     "cityNameExistsDesc":"Die eingegebene Stadt ist bereits in ihrer Liste. Bitte wählen Sie eine andere Stadt",
     "cityLoadingStatus" : "Stadt wird hinzugefügt...",
+    "dailyForecast" : "Wetter Vorhersage",
     "day" : "Tag",
-    "night" : "Nacht"
+    "night" : "Nacht",
+    "error" : "Fehler",
+    "enableLocationServiceDesc" : "Um diese Funktion zu nutzen, müssen Sie die Standort Funktion Ihres Smartphones aktvieren.",
+    "grantLocationPermissionDesc" : "Die Applikation benötigt Zugriff auf Ihren Standort um diese Funktion nutzen zu können."
 
 }
