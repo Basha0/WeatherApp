@@ -4,16 +4,16 @@ import 'package:weather/database/services/hive_service.dart';
 import 'package:weather/weather/model/weather_model.dart';
 
 abstract class DataFetchingLogic {
-  Future<WeatherModel?> getWeather();
+  Future<WeatherModel?> getWeather(String cityName);
   Future<List<City>> getAllCities();
 }
 
 class DataFetcher implements DataFetchingLogic {
 
   @override
-  Future<WeatherModel?> getWeather() async {
+  Future<WeatherModel?> getWeather(String cityName) async {
     var box = await HiveService.open(Boxes.weather);
-    if(box.values.isNotEmpty) return box.values.first;
+    if(box.values.isNotEmpty) return box.get(cityName);
     return null;
   }
   @override

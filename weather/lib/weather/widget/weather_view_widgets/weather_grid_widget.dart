@@ -14,12 +14,11 @@ class WeatherGridWidget extends ConsumerWidget {
     ref.read(getAllCitiesProvider);
 
     return Consumer(builder: (context, reference, child) {
+      // fetch Cities and create a ListView out of it
       final cities = reference.watch(citiesProvider) as List<City>;
       if (cities.isEmpty) EasyLoading.show(status: AppLocalizations.of(context).loadingCities);
       if (cities.isNotEmpty) EasyLoading.dismiss();
-
       return ListView.builder(
-        
         itemCount: cities.length,
         itemBuilder: (context, index) {
           return WeatherCardWidget(cities[index]);
