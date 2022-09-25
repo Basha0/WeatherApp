@@ -9,6 +9,7 @@ enum AvaiableCity {
 
 enum AllCieties { allCieties }
 
+// Add predefined Cities 
 extension AllCietiesExtension on AllCieties {
   List<City> get allCieties {
     List<City> allCieties = [];

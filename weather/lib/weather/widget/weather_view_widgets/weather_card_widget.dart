@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather/available_cities/models/city_model.dart';
 import 'package:weather/weather/view/weather_detail_view.dart';
 
-class WeatherCardWidget extends ConsumerWidget {
+class WeatherCardWidget extends StatelessWidget {
   final City city;
   const WeatherCardWidget(this.city);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
