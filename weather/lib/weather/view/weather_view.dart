@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:weather/l10n/view/language_view.dart';
 import 'package:weather/location/locationservice.dart';
 import 'package:weather/weather/dialog/weather_view_dialog.dart';
 import 'package:weather/weather/widget/weather_view_widgets/add_city_widget.dart';
@@ -13,7 +14,24 @@ class WeatherView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context).title)),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context).title),
+        centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: GestureDetector(
+              child: Icon(Icons.language),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LanguageScreen(true)),
+                );
+              },
+            ),
+          )
+        ],
+      ),
       body: WeatherGridWidget(),
       floatingActionButton: Consumer(
         builder: (context, ref, child) {
@@ -43,12 +61,18 @@ class WeatherView extends StatelessWidget {
                         await LocationService.determinePermission();
                         break;
                       case LocationServiceErrorHelper.serviceNotEnabled:
-                        WeatherDialog.showOkDialog(context, AppLocalizations.of(context).error,
-                            AppLocalizations.of(context).enableLocationServiceDesc);
+                        WeatherDialog.showOkDialog(
+                            context,
+                            AppLocalizations.of(context).error,
+                            AppLocalizations.of(context)
+                                .enableLocationServiceDesc);
                         break;
                       default:
-                        WeatherDialog.showOkDialog(context, AppLocalizations.of(context).error,
-                            AppLocalizations.of(context).grantLocationPermissionDesc);
+                        WeatherDialog.showOkDialog(
+                            context,
+                            AppLocalizations.of(context).error,
+                            AppLocalizations.of(context)
+                                .grantLocationPermissionDesc);
                     }
                   },
                   child: Container(
