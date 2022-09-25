@@ -4,9 +4,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather/available_cities/models/city_model.dart';
 import 'package:weather/database/providers/hive_db_providers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:weather/location/locationservice.dart';
+import 'package:weather/weather/dialog/weather_view_dialog.dart';
 
 class AddCityWidget extends StatelessWidget {
+  final List<City> _cities;
+  AddCityWidget(this._cities);
   String? _cityName;
 
   @override
@@ -55,32 +58,34 @@ class AddCityWidget extends StatelessWidget {
                     child: Text(
                       AppLocalizations.of(context).addCity,
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       if (_cityName != null && _cityName!.isNotEmpty) {
-                        EasyLoading.show(
-                            status:
-                                AppLocalizations.of(context).cityLoadingStatus);
-                        ref.read(addCityProvider(City(_cityName!, 23, 23)));
+                        if (_cities
+                            .where((element) => element.name == _cityName)
+                            .isNotEmpty) {
+                          WeatherDialog.showOkDialog(
+                              context,
+                              AppLocalizations.of(context).cityNameExistsTitle,
+                              AppLocalizations.of(context).cityNameExistsDesc);
+                        } else {
+                          EasyLoading.show(
+                              status: AppLocalizations.of(context)
+                                  .cityLoadingStatus);
+                          var position = await LocationService.getlocation();
 
-                        Navigator.pop(context);
+                          ref.read(
+                            addCityProvider(
+                              City(_cityName!, getNumber(position.latitude),
+                                  getNumber(position.longitude)),
+                            ),
+                          );
+                          Navigator.of(context).pop();
+                        }
                       } else {
-                        showDialog(
-                          context: context,
-                          builder: (con) => AlertDialog(
-                            title: Text(AppLocalizations.of(context)
-                                .cityNameEmptyTitle),
-                            content: Text(
-                                AppLocalizations.of(context).cityNameEmptyDesc),
-                            actions: [
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text(AppLocalizations.of(context).ok),
-                              ),
-                            ],
-                          ),
-                        );
+                        WeatherDialog.showOkDialog(
+                            context,
+                            AppLocalizations.of(context).cityNameEmptyTitle,
+                            AppLocalizations.of(context).cityNameEmptyDesc);
                       }
                     },
                   );
@@ -91,5 +96,10 @@ class AddCityWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  double getNumber(double input, {int precision = 2}) {
+    return double.parse(
+        '$input'.substring(0, '$input'.indexOf('.') + precision + 1));
   }
 }

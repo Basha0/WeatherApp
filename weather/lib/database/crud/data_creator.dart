@@ -1,4 +1,3 @@
-import 'package:hive/hive.dart';
 import 'package:weather/available_cities/models/city_model.dart';
 import 'package:weather/database/resources/boxes.dart';
 import 'package:weather/database/services/hive_service.dart';
