@@ -20,9 +20,13 @@ class AddCityWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Center(child: Text(AppLocalizations.of(context).addCityTitle)),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(AppLocalizations.of(context).addCityTitle)),
+          ),
+          
           TextField(
-            cursorColor: Colors.red,
+            cursorColor: Colors.white,
             onChanged: (cityName) {
               _cityName = cityName;
             },

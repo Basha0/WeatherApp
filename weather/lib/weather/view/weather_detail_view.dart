@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,9 +26,15 @@ class WeatherDetaiView extends ConsumerWidget {
             ),
             body: Stack(
               children: [
-                SvgPicture.asset(
-                  "assets/splash.svg",
-                  fit: BoxFit.cover,
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          "assets/splash/splash.png",
+                        ),
+                        fit: BoxFit.cover),
+                  ),
                 ),
                 Column(
                   children: [
@@ -49,9 +54,15 @@ class WeatherDetaiView extends ConsumerWidget {
             ),
             body: Stack(
               children: [
-                SvgPicture.asset(
-                  "assets/splash.svg",
-                  fit: BoxFit.cover,
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          "assets/splash/splash.png",
+                        ),
+                        fit: BoxFit.cover),
+                  ),
                 ),
                 Center(
                   child: Icon(
@@ -68,7 +79,7 @@ class WeatherDetaiView extends ConsumerWidget {
         return Text("Weater Error.");
       },
       loading: (loading) {
-        EasyLoading.show(status:  AppLocalizations.of(context).loadingWeather);
+        EasyLoading.show(status: AppLocalizations.of(context).loadingWeather);
         return Container();
       },
     );
