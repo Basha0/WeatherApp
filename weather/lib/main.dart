@@ -21,7 +21,6 @@ void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await initializeSingletons();
-  preloadSVGs();
   initializeEasyLoading();
   await initHiveDataBase();
   FlutterNativeSplash.remove();
@@ -70,15 +69,6 @@ initializeEasyLoading() {
     ..dismissOnTap = false;
 }
 
-// preloading and caching SVGs
-preloadSVGs() {
-  Future.wait([
-    precachePicture(
-        ExactAssetPicture(
-            SvgPicture.svgStringDecoderBuilder, "assets/splash.svg"),
-        null),
-  ]);
-}
 
 // initialize Hive
 initHiveDataBase() async {

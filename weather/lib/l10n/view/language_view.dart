@@ -15,9 +15,15 @@ class LanguageScreen extends ConsumerWidget {
     return Stack(
       children: [
         // background Image of language screen
-        SvgPicture.asset(
-          "assets/splash.svg",
-          fit: BoxFit.cover,
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(
+                  "assets/splash/splash.png",
+                ),
+                fit: BoxFit.cover),
+          ),
         ),
         Center(
           child: Column(
