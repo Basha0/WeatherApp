@@ -6,7 +6,7 @@ class LocationService {
     LocationPermission permission;
     LocationServiceErrorHelper status = LocationServiceErrorHelper.allowed;
 
-    // Check if locationservice is enabled
+    // Check if location service is enabled
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       status = LocationServiceErrorHelper.serviceNotEnabled;
@@ -26,8 +26,8 @@ class LocationService {
     return status;
   }
 
-  // get loction of User
-  static Future<Position> getlocation() async {
+  // get location of User
+  static Future<Position> getLocation() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.best);
     return position;

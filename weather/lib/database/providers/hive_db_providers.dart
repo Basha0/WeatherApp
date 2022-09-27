@@ -22,7 +22,7 @@ final getAllCitiesProvider =
   // if list is empty add predefined cities
   if (allCities.isEmpty) {
     allCities = AllCities.allCities.allCities;
-    await hiveService.saveCities(allCities);
+    await hiveService.addCities(allCities);
   }
   // add delay to display loading Animation else it would show and disappear to fast
   await Future.delayed(Duration(milliseconds: 1000));

@@ -9,5 +9,5 @@ abstract class HiveDatabaseLogic {
   //Create
   Future addWeather(WeatherModel weatherModel);
   Future addCity(City city);
-  Future saveCities(List<City> cities);
+  Future addCities(List<City> cities);
 }

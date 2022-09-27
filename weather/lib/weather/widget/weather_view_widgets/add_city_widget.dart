@@ -75,7 +75,7 @@ class AddCityWidget extends StatelessWidget {
                           EasyLoading.show(
                               status: AppLocalizations.of(context)
                                   .cityLoadingStatus);
-                          var position = await LocationService.getlocation();
+                          var position = await LocationService.getLocation();
 
                           ref.read(
                             addCityProvider(

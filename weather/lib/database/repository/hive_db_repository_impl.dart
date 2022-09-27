@@ -32,8 +32,8 @@ class HiveDatabase implements HiveDatabaseLogic {
 
   // Save all predfined cities to database
   @override
-  Future saveCities(List<City> cities) async {
-    return await _dataCreator.saveCities(cities);
+  Future addCities(List<City> cities) async {
+    return await _dataCreator.addCities(cities);
   }
 
   // Save a new City to database

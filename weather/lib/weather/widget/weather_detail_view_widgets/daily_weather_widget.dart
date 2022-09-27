@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/ressources/constants.dart';
-import 'package:weather/ressources/converter.dart';
+import 'package:weather/resources/constants.dart';
+import 'package:weather/resources/converter.dart';
 import 'package:weather/weather/model/weather_daily_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -36,7 +36,7 @@ class DailyWeatherWidget extends StatelessWidget {
                     children: [
                       // Convert TimeStamp to date
                       Text(
-                        ConvertionHelper.parseTimeStamp(
+                        ConversionHelper.parseTimeStamp(
                             dailyModel[index].currentTimeTimeStamp,
                             Constants.dayFormat),
                       ),
