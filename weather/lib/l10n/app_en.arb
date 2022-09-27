@@ -9,14 +9,14 @@
     "cityName":"City Name",
     "cityNameEmptyTitle":"City Name is Empty!",
     "cityNameEmptyDesc":"Please add a City Name to continue.",
-    "cityNameExistsTitle":"City allready exists",
-    "cityNameExistsDesc":"Your City is allready in your list. Please add another City.",
+    "cityNameExistsTitle":"City already exists",
+    "cityNameExistsDesc":"Your City is already in your list. Please add another City.",
     "cityLoadingStatus" : "City is being added...",
     "dailyForecast" : "Weather forecast",
     "day" : "Day",
     "night" : "Night",
     "error" : "Error",
-    "enableLocationServiceDesc" : "To use this function you need to enable your locataion.",
-    "grantLocationPermissionDesc" : "To use this function you need to allow the Application to access your locataion."
+    "enableLocationServiceDesc" : "To use this function you need to enable your location.",
+    "grantLocationPermissionDesc" : "To use this function you need to allow the Application to access your location."
 
 }

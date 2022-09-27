@@ -19,7 +19,7 @@ class LocationService {
         status = LocationServiceErrorHelper.denied;
       }
     }
-    // Check if permissions were denied for ever
+    // Check if permissions were denied forever
     if (permission == LocationPermission.deniedForever) {
       status = LocationServiceErrorHelper.deniedForever;
     }
