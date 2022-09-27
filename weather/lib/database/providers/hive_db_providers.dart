@@ -18,17 +18,17 @@ final getAllCitiesProvider =
 
   final hiveService = ref.read(hiveDatabaseProvider);
   // get all cities from database
-  List<City> allCieties = await hiveService.getAllCities();
+  List<City> allCities = await hiveService.getAllCities();
   // if list is empty add predefined cities
-  if (allCieties.isEmpty) {
-    allCieties = AllCieties.allCieties.allCieties;
-    await hiveService.saveCities(allCieties);
+  if (allCities.isEmpty) {
+    allCities = AllCities.allCities.allCities;
+    await hiveService.addCities(allCities);
   }
   // add delay to display loading Animation else it would show and disappear to fast
   await Future.delayed(Duration(milliseconds: 1000));
   // notify cities State Provider
-  citiesStateProvider.addAllCities(allCieties);
-  return allCieties;
+  citiesStateProvider.addAllCities(allCities);
+  return allCities;
 });
 
 // add new City via GPS Provider

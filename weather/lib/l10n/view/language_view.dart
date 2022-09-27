@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weather/l10n/language_prviders/language_provider.dart';
 import 'package:weather/main.dart';
-import 'package:weather/ressources/constants.dart';
-import 'package:weather/ressources/prefrence_keys.dart';
+import 'package:weather/resources/constants.dart';
+import 'package:weather/resources/preference_keys.dart';
 
 class LanguageScreen extends ConsumerWidget {
   final bool isSetting;
@@ -52,7 +51,7 @@ class LanguageScreen extends ConsumerWidget {
     );
   }
 
-  // set language that was choosen and save it to the app preferences
+  // set language that was chosen and save it to the app preferences
   setLanguage(WidgetRef ref, String language, BuildContext context) async {
     await sharedPreferences.setBool(PreferenceKeys.languageIsSet, true);
     await sharedPreferences.setString(PreferenceKeys.languageLocale, language);

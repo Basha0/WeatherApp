@@ -12,7 +12,7 @@ class WeatherCardWidget extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => WeatherDetaiView(city)),
+          MaterialPageRoute(builder: (context) => WeatherDetailView(city)),
         );
       },
       child: Card(

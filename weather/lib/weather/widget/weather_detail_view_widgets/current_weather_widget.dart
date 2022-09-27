@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/ressources/constants.dart';
-import 'package:weather/ressources/converter.dart';
+import 'package:weather/resources/constants.dart';
+import 'package:weather/resources/converter.dart';
 import 'package:weather/weather/model/weather_current_model.dart';
 
 class CurrentWeatherWidget extends StatelessWidget {
@@ -22,7 +22,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                     children: [
                       // Convert TimeStamp to date
                       Text(
-                        ConvertionHelper.parseTimeStamp(
+                        ConversionHelper.parseTimeStamp(
                             currentWeather.currentTimeTimeStamp, Constants.dayHourFormat ) + cityName,
                         style: Theme.of(context).textTheme.bodyText1,
                       ),

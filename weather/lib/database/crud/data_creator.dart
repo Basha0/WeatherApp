@@ -5,7 +5,7 @@ import 'package:weather/weather/model/weather_model.dart';
 
 abstract class DataCreatingLogic {
   Future addWeather(WeatherModel weatherModel);
-  Future saveCities(List<City> cities);
+  Future addCities(List<City> cities);
   Future addCity(City city);
 }
 
@@ -17,7 +17,7 @@ class DataCreator implements DataCreatingLogic {
   }
 
   @override
-  Future saveCities(List<City> cities) async {
+  Future addCities(List<City> cities) async {
     var box = await HiveService.open(Boxes.city);
     cities.forEach((city) async {
       await box.put(city.name, city);
