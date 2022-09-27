@@ -7,12 +7,11 @@ enum AvaiableCity {
   frankfurt,
 }
 
-enum AllCieties { allCieties }
+enum AllCities { allCities }
 
 // Add predefined Cities 
-extension AllCietiesExtension on AllCieties {
-  List<City> get allCieties {
-    List<City> allCieties = [];
+extension AllCitiesExtension on AllCities {
+  List<City> get allCities {
     AvaiableCity.values.forEach((cityItem) {
       String name;
       double lat;
@@ -39,9 +38,9 @@ extension AllCietiesExtension on AllCieties {
           long = 8.68;
           break;
       }
-      allCieties.add(City(name, lat, long));
+      allCities.add(City(name, lat, long));
     });
 
-    return allCieties;
+    return allCities;
   }
 }
